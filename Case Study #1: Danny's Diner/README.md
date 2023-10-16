@@ -37,7 +37,6 @@ join dannys_diner.menu m
 on s.product_id=m.product_id
 group by s.customer_id
 order by total desc
-
 ````
 
 #### Steps:
