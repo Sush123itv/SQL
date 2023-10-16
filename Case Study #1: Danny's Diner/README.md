@@ -32,14 +32,12 @@ If you have any questions, reach out to me on [LinkedIn](https://www.linkedin.co
 **1. What is the total amount each customer spent at the restaurant?**
 
 ````sql
-SELECT 
-  sales.customer_id, 
-  SUM(menu.price) AS total_sales
-FROM dannys_diner.sales
-INNER JOIN dannys_diner.menu
-  ON sales.product_id = menu.product_id
-GROUP BY sales.customer_id
-ORDER BY sales.customer_id ASC; 
+select s.customer_id,sum(m.price) total from dannys_diner.sales s
+join dannys_diner.menu m
+on s.product_id=m.product_id
+group by s.customer_id
+order by total desc
+
 ````
 
 #### Steps:
